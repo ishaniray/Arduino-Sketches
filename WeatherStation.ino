@@ -1,5 +1,5 @@
-  /* DHT-11 based 'Weather Station'
-   * (without using resistor / potentiometer)
+  /* DHT11-based 'Weather Station'
+   * (without using potentiometer + resistor)
    * 
    * Components: RG1602A, DHT11
    *  
@@ -42,21 +42,20 @@
   void setup()
   {
     analogWrite(V0, CONTRAST_VALUE); //alternative to not using a potentiometer
-    LCD.begin(16, 2); //parameters are 16, 2 since a 16 x 2 display is being used
+    LCD.begin(16, 2);
   }
   
   void loop()
   {
     int readDHT = DHT.read11(DHT11_PIN);
-    LCD.setCursor(0,0); //cursor is set to first position of first row (offset: 0, 0)
+    LCD.setCursor(0, 0); //cursor is set to first position of first row (offset: 0, 0)
     LCD.print("Temp: ");
     LCD.print(DHT.temperature);
     LCD.print((char)223); //223 is the ASCII value of the ° symbol
     LCD.print("C");
-    LCD.setCursor(0,1); //cursor is set to first position of second row (offset: 0, 0)
+    LCD.setCursor(0, 1); //cursor is set to first position of second row (offset: 0, 0)
     LCD.print("Humidity: ");
     LCD.print(DHT.humidity);
     LCD.print("%");
     delay(2000); //delay to ensure that sensor data is read at an interval of 2 seconds
   }
-
