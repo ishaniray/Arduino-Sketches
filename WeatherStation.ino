@@ -1,5 +1,5 @@
   /* DHT11-based 'Weather Station'
-   * (without using potentiometer + resistor)
+   * (without using a potentiometer)
    * 
    * Components: RG1602A, DHT11
    *  
@@ -41,7 +41,7 @@
   
   void setup()
   {
-    analogWrite(V0, CONTRAST_VALUE); //alternative to not using a potentiometer
+    analogWrite(V0, CONTRAST_VALUE); //alternative to using a potentiometer
     LCD.begin(16, 2);
   }
   
@@ -53,7 +53,7 @@
     LCD.print(DHT.temperature);
     LCD.print((char)223); //223 is the ASCII value of the ° symbol
     LCD.print("C");
-    LCD.setCursor(0, 1); //cursor is set to first position of second row (offset: 0, 0)
+    LCD.setCursor(0, 1); //cursor is set to first position of second row (offset: 0, 1)
     LCD.print("Humidity: ");
     LCD.print(DHT.humidity);
     LCD.print("%");
