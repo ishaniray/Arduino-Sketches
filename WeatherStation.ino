@@ -15,7 +15,7 @@
    * D6 of LCD to digital pin 3
    * D7 of LCD to digital pin 2
    * A of LCD to positive rail
-   * B of LCD to negative rail
+   * K of LCD to negative rail
    * VCC of DHT to positive rail
    * Data of DHT to digital pin 7
    * GND of DHT to negative rail
