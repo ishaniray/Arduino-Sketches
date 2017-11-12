@@ -73,7 +73,7 @@ void loop()
     lcd.setCursor(0, 0);
     lcd.print("  Aliens are");
     lcd.setCursor(0, 1);
-    lcd.print("real!");
+    lcd.print("   real!");
     
     //after a delay of 7 seconds, lock back the system
     delay(7000);
